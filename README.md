@@ -38,7 +38,7 @@ dev_dependencies:
 - [x] #2.3 AnimatedBuilder (11:10)
 - [x] #2.4 ColorTween (05:44)
 - [x] #2.5 Explicit Widgets (13:37)
-- [ ] #2.6 CurvedAnimation (06:33)
+- [x] #2.6 CurvedAnimation (06:33)
 - [ ] #2.7 ValueNotifier (10:02)
 - [ ] #2.8 AnimationStatus (05:21)
 
