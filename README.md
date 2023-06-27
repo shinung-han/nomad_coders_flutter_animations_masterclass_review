@@ -33,7 +33,7 @@ dev_dependencies:
 ### **#2 EXPLICIT ANIMATIONS**
 
 - [x] #2.0 Implicit vs Explicit (08:38)
-- [ ] #2.1 AnimationController (12:02)
+- [x] #2.1 AnimationController (12:02)
 - [ ] #2.2 Animation Values (07:47)
 - [ ] #2.3 AnimatedBuilder (11:10)
 - [ ] #2.4 ColorTween (05:44)
