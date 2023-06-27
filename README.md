@@ -24,7 +24,7 @@ dev_dependencies:
 ### **#1 IMPLICIT ANIMATIONS**
 
 - [x] #1.0 Project Setup (07:15)
-- [ ] #1.1 Implicitly Animated Widgets (12:15)
+- [x] #1.1 Implicitly Animated Widgets (12:15)
 - [ ] #1.2 AnimatedContainer (04:58)
 - [ ] #1.3 Curves (04:42)
 - [ ] #1.4 TweenAnimationBuilder (11:16)
