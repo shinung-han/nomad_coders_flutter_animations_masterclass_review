@@ -37,7 +37,7 @@ class _ImplicitAnimationsScreenState extends State<ImplicitAnimationsScreen> {
               transform: Matrix4.rotationZ(_visible ? 1 : 0),
               transformAlignment: Alignment.center,
               decoration: BoxDecoration(
-                color: _visible ? Colors.amberAccent : Colors.redAccent,
+                color: _visible ? Colors.redAccent : Colors.amberAccent,
                 borderRadius: BorderRadius.circular(_visible ? 100 : 0),
               ),
             ),
