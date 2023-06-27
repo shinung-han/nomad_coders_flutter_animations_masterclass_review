@@ -9,7 +9,7 @@ class ImplicitAnimationsScreen extends StatefulWidget {
 }
 
 class _ImplicitAnimationsScreenState extends State<ImplicitAnimationsScreen> {
-  bool _visible = true;
+  bool _visible = false;
 
   void _trigger() {
     setState(() {

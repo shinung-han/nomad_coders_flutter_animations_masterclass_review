@@ -13,9 +13,14 @@ class _ExplicitAnimationsScreenState extends State<ExplicitAnimationsScreen>
   late final AnimationController _animationController = AnimationController(
     vsync: this,
     duration: const Duration(
-      seconds: 3,
+      seconds: 2,
     ),
   );
+
+  late final Animation<Color?> _color = ColorTween(
+    begin: Colors.amber,
+    end: Colors.red,
+  ).animate(_animationController);
 
   void _play() {
     _animationController.forward();
@@ -36,8 +41,6 @@ class _ExplicitAnimationsScreenState extends State<ExplicitAnimationsScreen>
 
   @override
   Widget build(BuildContext context) {
-    print('build');
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Explicit Animations'),
@@ -47,18 +50,16 @@ class _ExplicitAnimationsScreenState extends State<ExplicitAnimationsScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AnimatedBuilder(
-              animation: _animationController,
+              animation: _color,
               builder: (context, child) {
-                return Opacity(
-                  opacity: _animationController.value,
-                  child: Container(
-                    width: 400,
-                    height: 400,
-                    color: Colors.amber,
-                  ),
+                return Container(
+                  width: 400,
+                  height: 400,
+                  color: _color.value,
                 );
               },
             ),
+            const SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
