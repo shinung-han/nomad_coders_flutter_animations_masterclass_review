@@ -25,7 +25,7 @@ dev_dependencies:
 
 - [x] #1.0 Project Setup (07:15)
 - [x] #1.1 Implicitly Animated Widgets (12:15)
-- [ ] #1.2 AnimatedContainer (04:58)
+- [x] #1.2 AnimatedContainer (04:58)
 - [ ] #1.3 Curves (04:42)
 - [ ] #1.4 TweenAnimationBuilder (11:16)
 - [ ] #1.5 Recap (03:03)
