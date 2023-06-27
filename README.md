@@ -35,7 +35,7 @@ dev_dependencies:
 - [x] #2.0 Implicit vs Explicit (08:38)
 - [x] #2.1 AnimationController (12:02)
 - [x] #2.2 Animation Values (07:47)
-- [ ] #2.3 AnimatedBuilder (11:10)
+- [x] #2.3 AnimatedBuilder (11:10)
 - [ ] #2.4 ColorTween (05:44)
 - [ ] #2.5 Explicit Widgets (13:37)
 - [ ] #2.6 CurvedAnimation (06:33)
