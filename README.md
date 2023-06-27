@@ -40,7 +40,7 @@ dev_dependencies:
 - [x] #2.5 Explicit Widgets (13:37)
 - [x] #2.6 CurvedAnimation (06:33)
 - [x] #2.7 ValueNotifier (10:02)
-- [ ] #2.8 AnimationStatus (05:21)
+- [x] #2.8 AnimationStatus (05:21)
 
 ### **#3 APPLE WATCH PROJECT**
 
