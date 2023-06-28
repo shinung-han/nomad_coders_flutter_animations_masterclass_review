@@ -53,7 +53,7 @@ dev_dependencies:
 ### **#4 SWIPING CARDS PROJECT**
 
 - [x] #4.0 Swiping Gesture (11:01)
-- [ ] #4.1 Bounds (12:55)
+- [x] #4.1 Bounds (12:55)
 - [ ] #4.2 Tween Transform (10:04)
 - [ ] #4.3 Dismiss Card (09:35)
 - [ ] #4.4 Background Card (04:42)
