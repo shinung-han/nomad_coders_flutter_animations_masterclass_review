@@ -46,7 +46,7 @@ dev_dependencies:
 
 - [x] #3.0 CustomPainter (13:02)
 - [x] #3.1 drawArc (14:44)
-- [ ] #3.2 shouldRepaint (14:07)
+- [x] #3.2 shouldRepaint (14:07)
 - [ ] #3.3 Random() (07:38)
 - [ ] #3.4 Code Challenge (01:53)
 
