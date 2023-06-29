@@ -57,7 +57,7 @@ dev_dependencies:
 - [x] #4.2 Tween Transform (10:04)
 - [x] #4.3 Dismiss Card (09:35)
 - [x] #4.4 Background Card (04:42)
-- [ ] #4.5 Cards (10:14)
+- [x] #4.5 Cards (10:14)
 - [ ] #4.6 Code Challenge (06:08)
 
 ### **#5 MUSIC PLAYER PROJECT**
