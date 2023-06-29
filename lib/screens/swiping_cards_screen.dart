@@ -15,7 +15,7 @@ class _SwipingCardsScreenState extends State<SwipingCardsScreen>
 
   late final AnimationController _position = AnimationController(
     vsync: this,
-    duration: const Duration(seconds: 2),
+    duration: const Duration(milliseconds: 500),
     lowerBound: (size.width + 100) * -1,
     upperBound: (size.width + 100),
     value: 0.0,
@@ -29,6 +29,31 @@ class _SwipingCardsScreenState extends State<SwipingCardsScreen>
   late final Tween<double> _scale = Tween(
     begin: 0.8,
     end: 1.0,
+  );
+
+  late final Tween<double> _buttonScale = Tween(
+    begin: 1.0,
+    end: 1.1,
+  );
+
+  late final ColorTween _cancelButtonBackgroundColor = ColorTween(
+    begin: Colors.white,
+    end: Colors.red,
+  );
+
+  late final ColorTween _cancelButtonIconColor = ColorTween(
+    begin: Colors.red,
+    end: Colors.white,
+  );
+
+  late final ColorTween _checkButtonBackgroundColor = ColorTween(
+    begin: Colors.white,
+    end: Colors.green,
+  );
+
+  late final ColorTween _checkButtonIconColor = ColorTween(
+    begin: Colors.green,
+    end: Colors.white,
   );
 
   void _onHorizontalDragUpdate(DragUpdateDetails details) {
@@ -50,13 +75,13 @@ class _SwipingCardsScreenState extends State<SwipingCardsScreen>
       _position
           .animateTo(
             (dropZone) * factor,
-            curve: Curves.bounceOut,
+            curve: Curves.easeOut,
           )
           .whenComplete(_whenComplete);
     } else {
       _position.animateTo(
         0,
-        curve: Curves.bounceOut,
+        curve: Curves.easeOut,
       );
     }
   }
@@ -68,6 +93,24 @@ class _SwipingCardsScreenState extends State<SwipingCardsScreen>
   }
 
   int _index = 1;
+
+  void _onCheckPressed() {
+    _position
+        .animateTo(
+          size.width + 100,
+          curve: Curves.easeOut,
+        )
+        .whenComplete(_whenComplete);
+  }
+
+  void _onClosePressed() {
+    _position
+        .animateTo(
+          (size.width + 100) * -1,
+          curve: Curves.easeOut,
+        )
+        .whenComplete(_whenComplete);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,6 +129,21 @@ class _SwipingCardsScreenState extends State<SwipingCardsScreen>
               180;
 
           final scale = _scale.transform(_position.value.abs() / size.width);
+
+          final buttonScale =
+              _buttonScale.transform(_position.value.abs() / size.width);
+
+          final cancelButtonBackgroundColor = _cancelButtonBackgroundColor
+              .transform(_position.value.abs() / (size.width + 100));
+
+          final cancelButtonIconColor = _cancelButtonIconColor
+              .transform(_position.value.abs() / (size.width + 100));
+
+          final checkButtonBackgroundColor = _checkButtonBackgroundColor
+              .transform(_position.value.abs() / (size.width + 100));
+
+          final checkButtonIconColor = _checkButtonIconColor
+              .transform(_position.value.abs() / (size.width + 100));
 
           return Stack(
             alignment: Alignment.topCenter,
@@ -112,6 +170,80 @@ class _SwipingCardsScreenState extends State<SwipingCardsScreen>
                       ),
                     ),
                   ),
+                ),
+              ),
+              Positioned(
+                bottom: 100,
+                child: Row(
+                  children: [
+                    Transform.scale(
+                      scale: _position.value.isNegative ? buttonScale : 1.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: _position.value.isNegative
+                              ? cancelButtonBackgroundColor
+                              : Colors.white,
+                          boxShadow: const <BoxShadow>[
+                            BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 10.0,
+                              spreadRadius: 0,
+                              offset: Offset(0.0, 10.0),
+                            ),
+                          ],
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 5,
+                          ),
+                        ),
+                        child: IconButton(
+                          onPressed: _onClosePressed,
+                          icon: Icon(
+                            Icons.close_rounded,
+                            size: 60,
+                            color: _position.value.isNegative
+                                ? cancelButtonIconColor
+                                : Colors.red,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 30),
+                    Transform.scale(
+                      scale: !_position.value.isNegative ? buttonScale : 1.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: !_position.value.isNegative
+                              ? checkButtonBackgroundColor
+                              : Colors.white,
+                          boxShadow: const <BoxShadow>[
+                            BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 10.0,
+                              spreadRadius: 0,
+                              offset: Offset(0.0, 10.0),
+                            ),
+                          ],
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 5,
+                          ),
+                        ),
+                        child: IconButton(
+                          onPressed: _onCheckPressed,
+                          icon: Icon(
+                            Icons.check,
+                            size: 60,
+                            color: !_position.value.isNegative
+                                ? checkButtonIconColor
+                                : Colors.green,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
                 ),
               ),
             ],
