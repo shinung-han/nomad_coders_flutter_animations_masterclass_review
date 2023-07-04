@@ -64,7 +64,7 @@ dev_dependencies:
 
 - [x] #5.0 Album PageView (08:47)
 - [x] #5.1 AnimatedSwitcher (11:49)
-- [ ] #5.2 Album Scale (14:51)
+- [x] #5.2 Album Scale (14:51)
 - [ ] #5.3 Hero (06:05)
 - [ ] #5.4 PageRouteBuilder (08:35)
 - [ ] #5.5 ProgressBar (11:33)
