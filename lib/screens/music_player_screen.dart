@@ -28,25 +28,24 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
     });
   }
 
-  // @override
-  // void initState() {
-  //   super.initState();
-
-  // }
-
   @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
   }
 
-  void _onTap(int index) {
+  void _onTap(int imageIndex) {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (_) => MusicPlayerDetailScreen(
-          index: index,
-        ),
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) {
+          return FadeTransition(
+            opacity: animation,
+            child: MusicPlayerDetailScreen(
+              index: imageIndex,
+            ),
+          );
+        },
       ),
     );
   }
