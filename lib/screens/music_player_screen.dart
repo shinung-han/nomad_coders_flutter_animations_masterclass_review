@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animations_masterclass_review/screens/music_player_detail_screen.dart';
 
 class MusicPlayerScreen extends StatefulWidget {
   const MusicPlayerScreen({super.key});
@@ -37,6 +38,17 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
   void dispose() {
     _pageController.dispose();
     super.dispose();
+  }
+
+  void _onTap(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => MusicPlayerDetailScreen(
+          index: index,
+        ),
+      ),
+    );
   }
 
   @override
@@ -87,24 +99,30 @@ class _MusicPlayerScreenState extends State<MusicPlayerScreen> {
                       final difference = (scroll - index).abs();
                       final scale = 1 - (difference * 0.1);
 
-                      return Transform.scale(
-                        scale: scale,
-                        child: Container(
-                          height: 350,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.4),
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                                offset: const Offset(0, 8),
-                              )
-                            ],
-                            image: DecorationImage(
-                              image:
-                                  AssetImage('assets/covers/${index + 1}.jpg'),
-                              fit: BoxFit.cover,
+                      return GestureDetector(
+                        onTap: () => _onTap(index + 1),
+                        child: Hero(
+                          tag: '${index + 1}',
+                          child: Transform.scale(
+                            scale: scale,
+                            child: Container(
+                              height: 350,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.4),
+                                    blurRadius: 10,
+                                    spreadRadius: 2,
+                                    offset: const Offset(0, 8),
+                                  )
+                                ],
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/covers/${index + 1}.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ),
                           ),
                         ),
