@@ -67,7 +67,7 @@ dev_dependencies:
 - [x] #5.2 Album Scale (14:51)
 - [x] #5.3 Hero (06:05)
 - [x] #5.4 PageRouteBuilder (08:35)
-- [ ] #5.5 ProgressBar (11:33)
+- [x] #5.5 ProgressBar (11:33)
 - [ ] #5.6 Progress Animation (06:34)
 - [ ] #5.7 Code Challenge (04:53)
 - [ ] #5.8 Marquee (07:51)
