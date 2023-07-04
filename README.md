@@ -68,7 +68,7 @@ dev_dependencies:
 - [x] #5.3 Hero (06:05)
 - [x] #5.4 PageRouteBuilder (08:35)
 - [x] #5.5 ProgressBar (11:33)
-- [ ] #5.6 Progress Animation (06:34)
+- [x] #5.6 Progress Animation (06:34)
 - [ ] #5.7 Code Challenge (04:53)
 - [ ] #5.8 Marquee (07:51)
 - [ ] #5.9 Lottie (13:54)
