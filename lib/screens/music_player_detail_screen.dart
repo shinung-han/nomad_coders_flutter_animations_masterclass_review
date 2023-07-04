@@ -20,10 +20,24 @@ class _MusicPlayerDetailScreenState extends State<MusicPlayerDetailScreen>
     duration: const Duration(minutes: 1),
   )..repeat(reverse: true);
 
+  late final Animation<int> _startTimeAnimation = IntTween(
+    begin: 60,
+    end: 0,
+  ).animate(_progressController);
+
+  late final Animation<int> _endTimeAnimation = IntTween(
+    begin: 0,
+    end: 60,
+  ).animate(_progressController);
+
   @override
   void dispose() {
     _progressController.dispose();
     super.dispose();
+  }
+
+  String _changeTime(int minutes, int seconds) {
+    return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
   }
 
   @override
@@ -73,28 +87,39 @@ class _MusicPlayerDetailScreenState extends State<MusicPlayerDetailScreen>
             },
           ),
           const SizedBox(height: 10),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40),
-            child: Row(
-              children: [
-                Text(
-                  "00:00",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                Spacer(),
-                Text(
-                  "01:00",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: AnimatedBuilder(
+              animation: _progressController,
+              builder: (context, child) {
+                int startMinutes = _startTimeAnimation.value ~/ 60;
+                int startSeconds = _startTimeAnimation.value % 60;
+
+                int endMinutes = _endTimeAnimation.value ~/ 60;
+                int endSeconds = _endTimeAnimation.value % 60;
+
+                return Row(
+                  children: [
+                    Text(
+                      _changeTime(startMinutes, startSeconds),
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const Spacer(),
+                    Text(
+                      _changeTime(endMinutes, endSeconds),
+                      style: const TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
           ),
           const SizedBox(height: 20),
