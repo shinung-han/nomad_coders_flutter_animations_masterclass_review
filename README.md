@@ -70,7 +70,7 @@ dev_dependencies:
 - [x] #5.5 ProgressBar (11:33)
 - [x] #5.6 Progress Animation (06:34)
 - [x] #5.7 Code Challenge (04:53)
-- [ ] #5.8 Marquee (07:51)
+- [x] #5.8 Marquee (07:51)
 - [ ] #5.9 Lottie (13:54)
 - [ ] #5.10 VolumePainter (20:33)
 - [ ] #5.11 Covered Menu (12:24)
