@@ -73,7 +73,7 @@ dev_dependencies:
 - [x] #5.8 Marquee (07:51)
 - [x] #5.9 Lottie (13:54)
 - [x] #5.10 VolumePainter (20:33)
-- [ ] #5.11 Covered Menu (12:24)
+- [x] #5.11 Covered Menu (12:24)
 - [ ] #5.12 Interval (09:58)
 - [ ] #5.13 Menu Slide (07:30)
 - [ ] #5.14 Menu Animations (09:16)
