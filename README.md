@@ -76,7 +76,7 @@ dev_dependencies:
 - [x] #5.11 Covered Menu (12:24)
 - [x] #5.12 Interval (09:58)
 - [x] #5.13 Menu Slide (07:30)
-- [ ] #5.14 Menu Animations (09:16)
+- [x] #5.14 Menu Animations (09:16)
 - [ ] #5.15 Conclusions (00:45)
 
 ### **#6 RIVE**
