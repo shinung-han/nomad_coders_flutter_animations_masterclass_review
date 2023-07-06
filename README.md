@@ -100,7 +100,7 @@ dev_dependencies:
 ### **#8 WALLET PROJECT**
 
 - [x] #8.0 Introduction (03:09)
-- [ ] #8.1 Animate Widget (07:13)
+- [x] #8.1 Animate Widget (07:13)
 - [ ] #8.2 Animate Syntax (05:33)
 - [ ] #8.3 Credit Cards (07:12)
 - [ ] #8.4 AnimateList (05:20)

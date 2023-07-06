@@ -4,6 +4,7 @@ import 'package:flutter_animations_masterclass_review/screens/explicit_animation
 import 'package:flutter_animations_masterclass_review/screens/implicit_animations_screen.dart';
 import 'package:flutter_animations_masterclass_review/screens/music_player_screen.dart';
 import 'package:flutter_animations_masterclass_review/screens/swiping_cards_screen.dart';
+import 'package:flutter_animations_masterclass_review/screens/wallet_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -70,6 +71,15 @@ class MenuScreen extends StatelessWidget {
                 );
               },
               child: const Text('Music Player'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                _goToPage(
+                  context,
+                  const WallerScreen(),
+                );
+              },
+              child: const Text('Wallet Screen'),
             ),
           ],
         ),
