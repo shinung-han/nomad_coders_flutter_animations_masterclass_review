@@ -103,7 +103,7 @@ dev_dependencies:
 - [x] #8.1 Animate Widget (07:13)
 - [x] #8.2 Animate Syntax (05:33)
 - [x] #8.3 Credit Cards (07:12)
-- [ ] #8.4 AnimateList (05:20)
+- [x] #8.4 AnimateList (05:20)
 - [ ] #8.5 Wallet Animation (09:34)
 - [ ] #8.6 AbsorbPointer (06:00)
 - [ ] #8.7 Credit Card Animation (12:33)

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class WallerScreen extends StatefulWidget {
   const WallerScreen({super.key});
@@ -11,19 +12,23 @@ class _WallerScreenState extends State<WallerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Wallet'),
+      appBar: AppBar(
+        title: const Text('Wallet'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            const CreditCard(bgColor: Colors.purple),
+            const CreditCard(bgColor: Colors.black),
+            const CreditCard(bgColor: Colors.blue),
+          ]
+              .animate(interval: 500.ms)
+              .fadeIn(begin: 0)
+              .slideX(begin: -1, end: 0),
         ),
-        body: const Padding(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              CreditCard(bgColor: Colors.purple),
-              CreditCard(bgColor: Colors.black),
-              CreditCard(bgColor: Colors.blue),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }
 
